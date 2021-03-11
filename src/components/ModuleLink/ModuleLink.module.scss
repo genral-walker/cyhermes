@@ -1,0 +1,45 @@
+
+@import '../../assets/scss/main.scss';
+
+.body {
+    @include flex-between;
+    // border: 1px solid blue;
+    flex: 0 0 28%;
+    margin-bottom: 2.2rem;
+    border-radius: 3px;
+    padding: 6px 0;
+    cursor: pointer;
+    transition: .4s;
+
+    &:last-of-type {
+       margin-left: 4.4rem;
+       margin-right: auto;
+    }
+
+    @include media(hover) {
+        background:$color-yellow-transparent;
+        color: $color-dark;
+
+        .icon svg {
+            fill:  $color-dark; 
+        }
+    }
+}
+
+.icon {
+    flex: 0 0 30%;
+    @include flex-center;
+
+    svg {
+        fill:  $color-grey-dark-2;
+        height: 60%;
+        width: 2.3rem;
+      }
+
+
+      & + div {
+        flex: 0 0 70%;
+      }
+  }
+  
+ 

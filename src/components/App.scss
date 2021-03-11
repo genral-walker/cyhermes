@@ -1,0 +1,80 @@
+
+@import "../assets/scss/main.scss";
+
+/*
+CARD
+when card is clicked, box should change which one is marked
+when hovered on, should give hint on click.
+*/ 
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+  letter-spacing: .4px;
+}
+*::selection {
+   background: $color-yellow-transparent;
+ }
+
+html {
+  font-size: 75%; //12px == 1rem
+
+  ///// MIN WIDTH RULES GOES IN ASCENDING ORDER //////
+  @include media(1800px) {
+    font-size: 93.5% !important;
+  }
+  @include media(1600px) {
+    font-size: 82.5%;
+  }
+  @include media(1500px) {
+    font-size: 87.5%;
+  }
+
+  //////// MAX-WIDTH RULES -- IN DESCENDING ORDER ////////
+  @include media(900px) {
+    font-size: 68.75%;
+  }
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: currentColor;
+}
+
+li {
+  list-style: none;
+}
+
+button,
+input,
+textarea {
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
+  &:active,
+  &:focus {
+    border: none;
+    outline: none;
+  }
+}
+
+textarea {
+  cursor: text;
+}
+
+.App {
+  display: flex;
+  justify-content: space-between;
+  height: 100vh;
+  min-height: 100vh;
+}

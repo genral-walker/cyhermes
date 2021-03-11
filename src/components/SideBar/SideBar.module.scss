@@ -1,0 +1,140 @@
+@import "../../assets/scss/main.scss";
+
+.body {
+  flex: 0 0 30%;
+  background: $color-dark;
+  align-self: stretch;
+  padding: 3.2rem 0 5rem;
+  backface-visibility: hidden;
+  & * {
+    color: $color-grey-dark;
+  }
+
+/*
+
+@include media(768px) {
+    position: absolute;
+    top: 0;
+    transform: translateX(-50%);
+    z-index: 100;
+    background: $color-black;
+  }
+*/   
+
+  
+
+  .logoBox {
+    padding: 0 5rem;
+    @include media(1200px) {
+      padding: 0 3rem;
+    }
+    svg {
+      fill: $color-grey-light;
+      height: 100%;
+      width: 3.5rem;
+      cursor: pointer;
+      transition: 0.3s;
+
+      @include media(hover) {
+        fill: $color-yellow-primary;
+      }
+    }
+  }
+
+  .links {
+    padding: 0 5rem;
+    margin-top: 10rem;
+    @include media(1200px) {
+      margin-top: 5rem;
+      padding: 0 3rem;
+    }
+
+    a {
+      height: 5rem;
+      @include flex-between;
+      flex-wrap: nowrap;
+      font-size: 1.3rem;
+      cursor: pointer;
+      position: relative;
+      transition: 0.7s;
+      @include media(360px) {
+        font-size: 1rem;
+      }
+
+      &:first-of-type::before {
+        content: "";
+        position: absolute;
+        height: 4rem;
+        width: 3px;
+        top: -2px;
+        left: -4.96rem;
+        background: $color-yellow-secondary;
+      }
+
+      @include media(hover) {
+        & {
+          color: $color-white;
+        }
+
+        svg {
+          fill: $color-white;
+        }
+      }
+
+      svg {
+        width: 1.7rem;
+        fill: $color-grey-dark;
+      }
+    }
+  }
+
+  .start {
+    padding: 0 5rem;
+    span {
+      display: inline-block;
+      width: 30%;
+      height: 1px !important;
+      border-bottom: 1px dashed $color-yellow-secondary;
+      margin: 1rem 0 2.3rem;
+    }
+  }
+
+  .quote {
+    margin: 6rem 5rem 0;
+    padding: 1.5rem 3rem;
+    border: 1px solid $color-grey-dark-2;
+    border-radius: 7px;
+    position: relative;
+
+    @include media(1200px) {
+      margin: 8rem 3rem 0;
+    }
+    @include media(1100px) {
+      margin: 5rem 3rem 0;
+    }
+    @include media(360px) {
+      padding: 0 1.2rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      font-style: italic;
+      span {
+        display: inline-block;
+        margin-top: 10px;
+      }
+    }
+
+    svg {
+      position: absolute;
+      top: 20px;
+      height: 4.2rem;
+      background: $color-grey-dark-3;
+      z-index: 1;
+      left: -30px;
+      width: 4.2rem;
+      fill: $color-grey-dark;
+      padding: 0.5rem;
+    }
+  }
+}

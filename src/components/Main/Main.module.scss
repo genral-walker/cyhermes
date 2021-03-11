@@ -1,0 +1,258 @@
+@import "../../assets/scss/main.scss";
+
+.main {
+  flex: 0 0 70%;
+  align-self: stretch;
+  position: relative;
+  padding: 3rem 12rem 2.5rem;
+  overflow-y: scroll;
+
+  @include media(1200px) {
+    padding: 3rem 7rem 2.5rem;
+  }
+  @include media(1024px) {
+    padding: 3rem 3rem 2.5rem;
+  }
+  @include media(768px) {
+    flex: 0 0 100%;  
+}
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(0.7px) opacity(1);
+    z-index: -1;
+  }
+}
+
+.intro {
+  @include flex-between;
+  margin-bottom: 3.5rem;
+
+  // LEFT
+  .hey {
+    color: $color-grey-dark-2;
+  }
+  .h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin: 1.5px 0 11px;
+    @include media(900px) {
+      font-size: 2.6rem;
+    }
+    @include media(800px) {
+      font-size: 2.3rem;
+    }
+    span {
+      color: $color-yellow-primary;
+      font-style: italic;
+    }
+  }
+  .select {
+    font-size: 0.96rem;
+    color: $color-grey-dark-2;
+  }
+
+  div:last-of-type {
+    @include media(768px) {
+      margin-left: auto;
+      margin-top: 1rem;
+    }
+    @include media(400px) {
+        margin-top: 2rem;
+      }
+  }
+  // RIGHT
+  .ngn {
+    color: $color-blue-secondary;
+    font-weight: 600;
+  }
+  .amount {
+    color: $color-blue-primary;
+    font-size: 3rem;
+    font-family: "Helvetica Neue", sans-serif;
+    font-weight: 600;
+    letter-spacing: 0;
+    transform: translateX(-3.3px);
+    @include media(900px) {
+      font-size: 2.6rem;
+    }
+    @include media(800px) {
+      font-size: 2.3rem;
+    }
+  }
+
+  .total {
+    font-size: 0.87rem;
+    color: $color-grey-dark-2;
+    span {
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+  }
+}
+
+.plans {
+  @include flex-start;
+  align-items: flex-end;
+  @include media(650px) {
+    margin-top: -1rem;
+  }
+
+  .starts {
+    color: $color-yellow-primary;
+    font-size: 1.1rem;
+  }
+  .ngn {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: $color-grey-dark-2;
+    margin-top: 2px;
+  }
+  .amount {
+    font-size: 1.8rem;
+    font-family: "Helvetica Neue", sans-serif;
+    font-weight: 600;
+    letter-spacing: 0;
+    transform: translateX(-1.3px);
+
+    & + p {
+      color: $color-grey-dark-2;
+    }
+  }
+  .premium {
+    font-size: 1.9rem;
+    font-weight: 800;
+    margin-top: 1.5rem;
+
+    & + p {
+      @include flex-start;
+      color: $color-grey-dark-2;
+      span {
+        height: 4px;
+        width: 4px;
+        margin: 0 0.5rem;
+        border-radius: 50%;
+        background: $color-yellow-secondary;
+      }
+    }
+  }
+
+  .basic {
+    font-size: 1.9rem;
+    font-weight: 800;
+    color: $color-blue-primary;
+
+    & + p {
+      color: $color-grey-dark-2;
+      font-size: 1.2rem;
+      margin-top: 4px;
+      span {
+        font-weight: 800;
+      }
+    }
+  }
+  .h5 {
+    margin-top: 1.7rem;
+    font-weight: 700;
+    color: $color-grey-dark-2;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 6px;
+      left: 35%;
+      width: 55%;
+      border-bottom: 1px dashed $color-blue-primary;
+    }
+
+    & + ul {
+      color: $color-grey-dark-2;
+      li {
+        margin-top: 0.4rem;
+      }
+    }
+  }
+}
+
+.add {
+  margin-top: 4rem;
+  color: $color-grey-dark-2;
+
+  h5 {
+    font-size: 1.3rem;
+  }
+
+  .range {
+    @include flex-between;
+    margin-top: 8px;
+  }
+  input {
+    width: 100%;
+  }
+}
+
+.modules {
+  margin-top: 2rem;
+  color: $color-grey-dark-2;
+  padding-bottom: 2rem;
+  border-bottom: 1px dashed $color-grey-dark-2;
+
+  .header {
+    @include flex-start;
+    margin-bottom: 1.7rem;
+    p {
+      padding: 0 12px;
+      font-weight: 600;
+      position: relative;
+      left: 1rem;
+      top: 7px;
+      background: $color-white;
+    }
+    hr {
+      background: $color-grey-dark-2;
+      height: 1px;
+      width: 100%;
+    }
+  }
+
+  .links {
+    @include flex-between;
+  }
+}
+
+.end {
+  @include flex-between;
+  padding: 2rem 0 3rem;
+  button {
+    transition: 0.2s;
+
+    &:first-of-type {
+      color: $color-yellow-transparent;
+      font-size: 1.2rem;
+    }
+    &:last-of-type {
+      background: $color-yellow-primary;
+      border-radius: 5px;
+      font-weight: 700;
+      padding: 1rem 2rem;
+    }
+
+    @include media(hover) {
+      transform: translateY(-1.13px) scale(1.013);
+    }
+    &:active {
+      transform: translateY(1px) scale(1);
+    }
+    @include media(noHover) {
+      &:active {
+        transform: translateY(1.3px) scale(0.991);
+      }
+    }
+  }
+}

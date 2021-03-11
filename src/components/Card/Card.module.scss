@@ -1,0 +1,39 @@
+
+@import '../../assets/scss/main.scss';
+
+.card {
+    padding: 2rem;
+    border-radius: 5px;
+    width: 18rem;
+    min-width: max-content;
+    box-shadow: 1px 12px 30px -4px rgba(118, 171, 218, 0.336);
+    cursor: pointer;
+    @include media(360px) {
+        padding: 1.5rem;
+      }
+
+    &:first-of-type {
+        margin-right: 2rem;
+    }
+    &:last-of-type {
+        box-shadow: none;
+        background: $color-blue-transparent;
+        border: 1px solid $color-blue-primary;
+        position: relative;
+        @include media(650px) {
+            margin-top: 2rem;
+          }
+
+        &::after {
+            content: url(../../assets//svg/check.svg);  
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            width: 1.8rem;
+            height: 2.2rem;
+            color: $color-white;
+            background: rgb(59, 230, 116);
+            border-radius: 50%;
+        }
+    }
+}                 
